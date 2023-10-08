@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Reminder App</h1>
+        <h2>Stay on Top of your Schedule</h2>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <form class="form" id="form">
+          <div>
+            <label for="notification_type" class="label"
+              >Notification Type</label
+            >
+            <select
+              name="notification_type"
+              id="notification_type"
+              class="input"
+            >
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
+              <option value="SMS">SMS</option>
+              <option value="EMAIL">EMAIL</option>
+            </select>
+          </div>
+          <div>
+            <label for="user_id" class="label">User ID</label>
+            <input type="text" name="user_id" id="user_id" class="input" />
+          </div>
+          <div>
+            <label for="timer" class="label">Reminder Time</label>
+            <input type="datetime-local" name="ttl" id="timer" class="input" />
+          </div>
+          <div>
+            <label for="message" class="label">Message</label>
+            <textarea
+              class="input"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Type your message"
+            ></textarea>
+          </div>
+          <div>
+            <button class="send" id="send" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
