@@ -1,12 +1,10 @@
-type Payload = {
+type NotificationType = 'SMS' | 'EMAIL';
+
+interface PostData {
   user_id: string;
   ttl: number;
   message: string;
-  notification_type: 'SMS' | 'EMAIL';
-};
+  notification_type: NotificationType;
+}
 
-type Response = {
-  message: string;
-};
-
-export type { Payload, Response };
+export type { NotificationType, PostData };
