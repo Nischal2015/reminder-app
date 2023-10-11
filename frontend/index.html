@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reminder App</title>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
     <header>
@@ -14,7 +14,7 @@
         <h2>Stay on Top of your Schedule</h2>
       </div>
     </header>
-    <section>
+    <section class="main">
       <div class="container">
         <form class="form" id="form">
           <div>
@@ -25,6 +25,7 @@
               name="notification_type"
               id="notification_type"
               class="input"
+              required
             >
               <option value="none" selected disabled hidden>
                 Select an Option
@@ -35,11 +36,24 @@
           </div>
           <div>
             <label for="user_id" class="label">User ID</label>
-            <input type="text" name="user_id" id="user_id" class="input" />
+            <input
+              type="text"
+              name="user_id"
+              id="user_id"
+              class="input"
+              placeholder="Enter your User ID"
+              required
+            />
           </div>
           <div>
             <label for="timer" class="label">Reminder Time</label>
-            <input type="datetime-local" name="ttl" id="timer" class="input" />
+            <input
+              type="datetime-local"
+              name="ttl"
+              id="timer"
+              class="input"
+              required
+            />
           </div>
           <div>
             <label for="message" class="label">Message</label>
@@ -50,6 +64,7 @@
               cols="30"
               rows="10"
               placeholder="Type your message"
+              required
             ></textarea>
           </div>
           <div>
