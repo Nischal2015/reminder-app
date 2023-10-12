@@ -4,7 +4,6 @@ type HTTPRequest = 'GET' | 'POST';
 
 interface BaseRequestOptions {
   method: HTTPRequest;
-  headers: Record<string, string>;
 }
 
 type RequestOptions = BaseRequestOptions &
@@ -15,29 +14,22 @@ type RequestOptions = BaseRequestOptions &
 async function fetchAPI<T>(
   pathname: string,
   method: 'GET',
-  payload?: Record<string, any>,
-  headers?: Record<string, string>
+  payload?: Record<string, any>
 ): Promise<T>;
 
 async function fetchAPI<T>(
   pathname: string,
   method: 'POST',
-  payload: Record<string, any>,
-  headers?: Record<string, string>
+  payload: Record<string, any>
 ): Promise<T>;
 
 async function fetchAPI<T>(
   pathname: string,
   method: HTTPRequest,
-  payload: Record<string, any> = {},
-  headers?: Record<string, string>
+  payload: Record<string, any> = {}
 ): Promise<T> {
   const requestOptions: RequestOptions = {
     method,
-    headers: {
-      'Content-Type': 'application/json',
-      ...headers,
-    },
   };
 
   if (method === 'POST') {
