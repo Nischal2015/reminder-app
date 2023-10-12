@@ -40,14 +40,17 @@ h2 {
   margin-block-end: 1.6rem;
 }
 
-.container {
+.container,
+.header {
   max-width: 120rem;
-  padding: 0 1.6rem;
   margin: 0 auto;
+  padding-inline: 4.8rem;
 }
 
-.main {
-  margin-top: 4.8rem;
+.main,
+.reminder {
+  padding-block-start: 3.2rem;
+  padding-block-end: 4.8rem;
 }
 
 .form {
@@ -56,9 +59,8 @@ h2 {
 }
 
 .form > div {
-  max-width: 70%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 3fr 9fr;
   gap: 2rem;
   align-items: baseline;
 }
@@ -66,6 +68,7 @@ h2 {
 .form > div:last-child button {
   grid-column: 2 / -1;
   margin-left: auto;
+  margin-block-start: 0.8rem;
 }
 
 .label {
@@ -78,24 +81,24 @@ h2 {
   font-size: 1.6rem;
 }
 
-.send {
+.btn {
   border-radius: 2px;
   cursor: pointer;
   position: relative;
   background-color: var(--blue);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--white);
   transition: padding 0.15s linear;
 }
 
-.send:disabled {
+.btn:disabled {
   background-color: var(--light-grey);
   color: var(--grey);
   cursor: not-allowed;
 }
 
-.send:before {
+.btn:before {
   content: '';
   position: absolute;
   inset: 0;
@@ -105,19 +108,19 @@ h2 {
   border-radius: inherit;
 }
 
-.send:hover:before {
+.btn:hover:before {
   opacity: 1;
 }
 
-.send.spinning {
+.btn.spinning {
   padding-right: 4.8rem;
 }
 
-.send:disabled:hover:before {
+.btn:disabled:hover:before {
   opacity: 0;
 }
 
-.send.spinning:after {
+.btn.spinning:after {
   content: '';
   height: 2rem;
   width: 2rem;
@@ -130,10 +133,14 @@ h2 {
 }
 
 .input,
-.send {
+.btn {
   border: none;
   padding: 1.2rem 2.4rem;
   border-radius: 4px;
+}
+
+.reminders {
+  margin-left: auto;
 }
 
 .skeleton {
@@ -163,5 +170,30 @@ h2 {
   }
   100% {
     opacity: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding-inline: 3.2rem;
+  }
+
+  .form {
+    gap: 3.2rem;
+  }
+
+  .form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form > div:last-child button {
+    width: 100%;
   }
 }

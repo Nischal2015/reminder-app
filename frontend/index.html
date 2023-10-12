@@ -8,71 +8,92 @@
     <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1>Reminder App</h1>
-        <h2>Stay on Top of your Schedule</h2>
-      </div>
+    <header class="header">
+      <h1>Reminder App</h1>
+      <h2>Stay on Top of your Schedule</h2>
     </header>
-    <section class="main">
-      <div class="container">
-        <form class="form" id="form">
-          <div>
-            <label for="notification_type" class="label"
-              >Notification Type</label
-            >
-            <select
-              name="notification_type"
-              id="notification_type"
-              class="input"
-              required
-            >
-              <option value="none" selected disabled hidden>
-                Select an Option
-              </option>
-              <option value="SMS">SMS</option>
-              <option value="EMAIL">EMAIL</option>
-            </select>
-          </div>
-          <div>
-            <label for="user_id" class="label">User ID</label>
-            <input
-              type="text"
-              name="user_id"
-              id="user_id"
-              class="input"
-              placeholder="Enter your User ID"
-              required
-            />
-          </div>
-          <div>
-            <label for="timer" class="label">Reminder Time</label>
-            <input
-              type="datetime-local"
-              name="ttl"
-              id="timer"
-              class="input"
-              required
-            />
-          </div>
-          <div>
-            <label for="message" class="label">Message</label>
-            <textarea
-              class="input"
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              placeholder="Type your message"
-              required
-            ></textarea>
-          </div>
-          <div>
-            <button class="send" id="send" type="submit">Send</button>
-          </div>
-        </form>
-      </div>
-    </section>
+    <main>
+      <section class="main">
+        <div class="container">
+          <form class="form" id="form">
+            <div>
+              <label for="notification_type" class="label"
+                >Notification Type</label
+              >
+              <select
+                name="notification_type"
+                id="notification_type"
+                class="input"
+                required
+              >
+                <option value="none" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="SMS">SMS</option>
+                <option value="EMAIL">EMAIL</option>
+              </select>
+            </div>
+            <div>
+              <label for="user_id" class="label">User ID</label>
+              <input
+                type="text"
+                name="user_id"
+                id="user_id"
+                class="input"
+                placeholder="Enter your User ID"
+                required
+              />
+            </div>
+            <div>
+              <label for="timer" class="label">Reminder Time</label>
+              <input
+                type="datetime-local"
+                name="remaining_time"
+                id="timer"
+                class="input"
+                required
+              />
+            </div>
+            <div>
+              <label for="message" class="label">Message</label>
+              <textarea
+                class="input"
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="e.g: Pay electricity bills"
+                required
+              ></textarea>
+            </div>
+            <div>
+              <button class="btn" id="send" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="reminder">
+        <div class="container">
+          <form class="form" id="reminder_form">
+            <div>
+              <label for="search_email" class="label">User ID</label>
+              <input
+                type="email"
+                name="user_id"
+                id="search_email"
+                class="input"
+                placeholder="Enter email"
+                required
+              />
+            </div>
+
+            <button class="btn reminders" id="reminders">Get Reminders</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
