@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Reminders</title>
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container header">
+        <a href="/" class="logo"> Reminder App </a>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li>
+              <a href="/" class="main-nav-link">SET Reminder</a>
+            </li>
+            <li>
+              <a href="reminders.html" class="main-nav-link">GET Reminder</a>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </header>
+    <main>
+      <section class="main">
+        <div class="container">
+          <form class="form" id="reminder_form">
+            <div>
+              <label for="search_email" class="label">User ID</label>
+              <input
+                type="email"
+                name="user_id"
+                id="search_email"
+                class="input"
+                placeholder="Enter email"
+                required
+              />
+            </div>
+            <div>
+              <button class="btn reminders" id="reminders">
+                Get Reminders
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="reminder">
+        <div class="container">
+          <div class="table-container">
+            <table class="table">
+              <thead class="thead">
+                <tr>
+                  <th class="column1">S.N.</th>
+                  <th class="column2">Remaining Time</th>
+                  <th class="column3">Reminder</th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-body">
+              <table class="table" id="reminder-table">
+                <tbody class="tbody" id="tbody">
+                  <tr>
+                    <td colspan="3" class="nothing">Nothing to show</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="src/scripts/reminders.ts"></script>
+  </body>
+</html>
