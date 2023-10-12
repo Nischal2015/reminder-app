@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
   --grey: #999;
@@ -40,8 +40,63 @@ h2 {
   margin-block-end: 1.6rem;
 }
 
-.container,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-grey);
+  height: 8rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.main-nav-list {
+  display: flex;
+  gap: 1.6rem;
+  list-style-type: none;
+  font-size: 1.6rem;
+}
+
+.main-nav-link {
+  padding: 1.2rem 1.6rem;
+  opacity: 0.8;
+  transition: opacity 0.15s ease-in-out;
+  position: relative;
+}
+
+.main-nav-link:hover {
+  opacity: 1;
+}
+
+.main-nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.2rem;
+  height: 2px;
+  background-color: var(--dark-grey);
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.15s ease-in;
+  transform-origin: 0 0;
+}
+
+.main-nav-link:hover:after {
+  transform: scaleX(0.9);
+}
+
+.container {
   max-width: 120rem;
   margin: 0 auto;
   padding-inline: 4.8rem;
@@ -72,7 +127,8 @@ h2 {
 }
 
 .label {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .input {
@@ -139,17 +195,71 @@ h2 {
   border-radius: 4px;
 }
 
-.reminders {
-  margin-left: auto;
+.table-container {
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.skeleton {
-  display: block;
-  height: 20px;
+.table {
   width: 100%;
-  background-color: var(--grey);
-  border-radius: 2px;
-  animation: slider 1.5s infinite ease-in-out;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.thead tr {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+.thead th {
+  padding-block: 1.8rem;
+  font-size: 1.8rem;
+}
+
+.table-body {
+  max-height: 28.4rem;
+  overflow-y: scroll;
+}
+
+.tbody td {
+  padding-block: 1.6rem;
+  font-size: 1.6rem;
+  color: var(--dark-grey);
+}
+
+.tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.column1 {
+  width: 15%;
+  padding-inline-start: 3.2rem;
+}
+
+.column2 {
+  width: 35%;
+  padding-inline-end: 1.2rem;
+}
+
+.column3 {
+  width: 50%;
+  padding-inline-end: 1.2rem;
+}
+
+.tbody .nothing {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--grey);
+  padding-block: 8rem;
+}
+
+.reminders {
+  margin-left: auto;
 }
 
 @keyframes spinner {
@@ -180,7 +290,7 @@ h2 {
 
   .container {
     margin: 0 auto;
-    padding-inline: 3.2rem;
+    padding-inline: 2.4rem;
   }
 
   .form {
