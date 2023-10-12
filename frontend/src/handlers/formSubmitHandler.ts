@@ -13,12 +13,12 @@ function formSubmit(
     const data = new FormData(event.target);
     const payload = Object.fromEntries(data) as never as PostData;
 
-    const userInputDatetime = payload['ttl'];
+    const userInputDatetime = payload['remaining_time'];
     const userDatetime = new Date(userInputDatetime);
 
     const ttl = getTimeInterval(userDatetime);
     checkTTLValidity(ttl);
-    payload['ttl'] = ttl;
+    payload['remaining_time'] = ttl;
 
     async function postReminder() {
       try {
