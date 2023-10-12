@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>Reminder App</h1>
-      <h2>Stay on Top of your Schedule</h2>
+    <header>
+      <nav class="container header">
+        <a href="/" class="logo"> Reminder App </a>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li>
+              <a href="/" class="main-nav-link">SET Reminder</a>
+            </li>
+            <li>
+              <a href="reminders.html" class="main-nav-link">GET Reminder</a>
+            </li>
+          </ul>
+        </nav>
+      </nav>
     </header>
     <main>
       <section class="main">
@@ -72,28 +83,8 @@
           </form>
         </div>
       </section>
-
-      <section class="reminder">
-        <div class="container">
-          <form class="form" id="reminder_form">
-            <div>
-              <label for="search_email" class="label">User ID</label>
-              <input
-                type="email"
-                name="user_id"
-                id="search_email"
-                class="input"
-                placeholder="Enter email"
-                required
-              />
-            </div>
-
-            <button class="btn reminders" id="reminders">Get Reminders</button>
-          </form>
-        </div>
-      </section>
     </main>
 
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="src/scripts/main.ts"></script>
   </body>
 </html>
