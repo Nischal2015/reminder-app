@@ -1,10 +1,13 @@
 type NotificationType = 'SMS' | 'EMAIL';
 
-interface PostData {
+interface GetReminderData {
   user_id: string;
-  ttl: number;
+}
+
+interface PostData extends GetReminderData {
+  remaining_time: number;
   message: string;
   notification_type: NotificationType;
 }
 
-export type { NotificationType, PostData };
+export type { NotificationType, GetReminderData, PostData };
